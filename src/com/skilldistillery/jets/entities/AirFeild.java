@@ -114,12 +114,12 @@ public class AirFeild {
 		
 	}
 	
-	public void allUfosObduct() {
+	public void allUfosAbduct() {
 		for (int i = 0; i < machineArr.size(); i++) {
 			if (machineArr.get(i) instanceof Ufo ) {
 				
 				Ufo ufo = (Ufo) machineArr.get(i);
-				ufo.obductHumans();
+				ufo.abductHumans();
 				System.out.println();
 			}
 		}

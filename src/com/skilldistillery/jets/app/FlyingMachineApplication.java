@@ -17,8 +17,10 @@ public class FlyingMachineApplication {
 
 	public static void main(String[] args) {
 		FlyingMachineApplication fma = new FlyingMachineApplication();
+		
 		fma.launch();
-
+		
+		fma.kb.close();
 	}
 
 	private void launch() {
@@ -53,7 +55,7 @@ public class FlyingMachineApplication {
 				airfeild.findFurthestFlyingMachine();
 				break;
 			case 5:
-				airfeild.allUfosObduct();
+				airfeild.allUfosAbduct();
 				break;
 			case 6:
 				airfeild.loadAllPassengerPlanes();
@@ -79,8 +81,8 @@ public class FlyingMachineApplication {
 		System.out.println("1. List fleet");
 		System.out.println("2. Fly all machines");
 		System.out.println("3. View the fastest machine");
-		System.out.println("4. View jet with Longest range");
-		System.out.println("5. All UFOs Obduct!");
+		System.out.println("4. View machine with Longest range");
+		System.out.println("5. All UFOs Abduct!");
 		System.out.println("6. Board all passenger planes");
 		System.out.println("7. Add flying machine to fleet");
 		System.out.println("8. remove flying machine from fleet");
