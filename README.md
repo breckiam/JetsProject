@@ -45,8 +45,15 @@ include:
 	user is displayed with "Blank_Model" removed. If the user dosen't enter a 
 	valid model in the air field, a message is displayed telling the user that 
 	"No Machines were removed, invalid choice". 
+
+9. Save Save flying machines to file
+	* Asks user to enter the name of the file they want to save the jets as. User
+	enters a name and ".txt" is appended to the user input. The file name is then 
+	checked to make sure it isn't the same name as the source file. If its not 
+	then new file is saved with all flying machines info in the air field. The 
+	flying machines info is saved in CSV file format. 
 	
-9. Quit 
+10. Quit 
 	* stops the program		
 	
 Each time a menu option is selected the user will be returned to the main menu 

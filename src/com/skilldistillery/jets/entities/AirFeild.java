@@ -2,7 +2,9 @@ package com.skilldistillery.jets.entities;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -135,5 +137,29 @@ public class AirFeild {
 			}
 		}
 	}
+	
+	public void saveFlyingMachinesToFile(String fileName) {
+		
+		if (fileName.equalsIgnoreCase("jets.txt")) {
+			System.err.println(fileName + " already exists, nothing was saved. Try again..");
+			return;
+		}
+		
+		  try 
+		    (FileWriter fw = new FileWriter(fileName);
+		    PrintWriter pw = new PrintWriter(fw)) {
+		    for (FlyingMachine fm : machineArr) {
+		    	
+		    	pw.println(fm.getClass().getSimpleName() + ","+
+		    		  fm.getModel() + "," + fm.getSpeed() + "," +
+		    		  fm.getRange() + "," + fm.getPrice());
+		    }
+		    pw.close();
+		  }
+		  catch (IOException e) {
+		    System.err.println(e);
+		  }
+		}
+	
 	
 }

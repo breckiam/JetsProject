@@ -71,7 +71,7 @@ public abstract class FlyingMachine {
 	}
 	
 	public String toString() {
-		return "Type: " + this.getClass().getSimpleName() + " Model: " + this.model + " Speed: " + this.speed + " Range: " + this.range + " Price: " + this.price;
+		return "Type: " + this.getClass().getSimpleName() + " | Model: " + this.model + " | Speed: " + this.speed + " | Range: " + this.range + " | Price: " + this.price;
 	}
 	
 }

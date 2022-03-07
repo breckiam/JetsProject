@@ -30,13 +30,13 @@ public class FlyingMachineApplication {
 
 			displayUserMenu();
 
-			while (choice > 9 || choice < 1) {
+			while (choice > 10 || choice < 1) {
 				try {
-					System.out.print("Enter 1-9: ");
+					System.out.print("Enter 1-10: ");
 					choice = kb.nextInt();
 
 				} catch (InputMismatchException e) {
-					System.err.println("Invalid input, enter 1-9.");
+					System.err.println("Invalid input, enter 1-10.");
 				}
 				kb.nextLine();
 			}
@@ -66,7 +66,19 @@ public class FlyingMachineApplication {
 			case 8:
 				displayRemoveMenu();
 				break;
-			case 9:
+			case 9: 
+				System.out.print("\nPlease enter a file name to save machines: ");
+				String file = kb.next();
+				System.out.println();
+				if (file.contains(".txt")) {
+					System.err.println("Nothing was saved. Please dont enter \".txt\" only the file name.\n ");
+					
+					break;
+				}
+				file = file + ".txt";
+				airfeild.saveFlyingMachinesToFile(file);
+				break;
+			case 10:
 				keepGoing = false;
 				break;
 			default:
@@ -85,8 +97,9 @@ public class FlyingMachineApplication {
 		System.out.println("5. All UFOs Abduct!");
 		System.out.println("6. Board all passenger planes");
 		System.out.println("7. Add flying machine to fleet");
-		System.out.println("8. remove flying machine from fleet");
-		System.out.println("9. Quit");
+		System.out.println("8. Remove flying machine from fleet");
+		System.out.println("9. Save flying machines to file");
+		System.out.println("10. Quit");
 	}
 
 	private void dislayAddMachineMenu() {
